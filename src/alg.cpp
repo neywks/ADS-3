@@ -3,6 +3,10 @@
 #include "alg.h"
 
 uint64_t collatzMaxValue(uint64_t num) {
+  if (num == 0) {
+    return 0;
+  }
+  
   uint64_t max = num;
   
     while (num != 1) {
@@ -19,6 +23,10 @@ uint64_t collatzMaxValue(uint64_t num) {
   }
 
 unsigned int collatzLen(uint64_t num) {
+  if (num == 0) {
+    return 0;
+  }
+  
   unsigned int len = 1;
 
   while (num != 1) {
@@ -35,6 +43,13 @@ unsigned int collatzLen(uint64_t num) {
 unsigned int seqCollatz(unsigned int *maxlen,
                         uint64_t lbound,
                         uint64_t rbound) {
+  if (lbound > rbound) {
+    if (maxlen != nullptr) {
+      *maxlen = 0;
+    }
+    return 0;
+  }
+  
   unsigned int count = 0;
   unsigned int mLen = 0;
 

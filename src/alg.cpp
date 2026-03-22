@@ -11,7 +11,7 @@ uint64_t max = num;
     } else {
       num = 3 * num + 1;
     }
-    if (num > maxValue) {
+    if (num > max) {
       max = num;
     }
   }
